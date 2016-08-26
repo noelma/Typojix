@@ -28,8 +28,8 @@ Recommande l’utilisation des feuilles minimisés pour le passage du site en pr
 ```
 ##Installation des feuilles de styles LESS
 ```
-<link href="less/typojix.min.css.less" rel="stylesheet/less">
-<link href="less/typojix.txt-columns.min.css.less" rel="stylesheet/less">
+<link href="less/typojix.css.less" rel="stylesheet/less">
+<link href="less/typojix.txt-columns.css.less" rel="stylesheet/less">
 ```
 Nécessite l’utilisation du script LESS ou de LESS CND
 ```
