@@ -1,10 +1,11 @@
+#Typojix v1.2
 Typojix est un micro framework CSS permettant d’uniformiser et simplifié la gestion typographique de page web. Il offre également un STARTER-KIT vous permettant de personnaliser vos styles CSS rapidement (modifier les couleurs, la taille du texte, les fonts d’écriture…).
 
 ##Tester Typojix
 Télécharger Typojix puis ouvrer le fichier index.html. Il contient l’ensemble des balises et classes utilisables. Ce document peut servir de référence à vos intégrations.
 
 ##Utilisation du STARTERKIT-typojix
-* Ouvir STARTERKIT-typojix.css.txt ou STARTERKIT-typojix.css.less.txt,
+* Ouvir STARTERKIT-typojix.css.txt,
 * Faîtes les modifications nécessaires,
 * Renommer en typojix.css,
 * Appeler votre feuille de style dans vos pages web.
