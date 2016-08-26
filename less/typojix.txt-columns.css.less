@@ -1,0 +1,81 @@
+/*------------------------------------*\
+	name: Typojix v1.2
+
+	author: NOËL Mathieu
+	date: 2015 - 2016
+	brief: "Typojix" offre un "STARTER KIT" pour mettre en place, simplifier et uniformiser la typologie de vos pages web.
+	MIT License (https://github.com/noelma/Typojix/blob/master/LICENSE)
+\*------------------------------------*/
+/*------------------------------------*\
+	$COLONNES
+\*------------------------------------*/
+.txt-gap,
+.txt-gap-dotted,
+.txt-gap-dashed,
+.txt-gap-solid{
+	-webkit-column-gap: 40px;
+	-moz-column-gap: 40px;
+	column-gap: 40px;
+}
+.txt-dotted,
+.txt-gap-dotted{
+	-webkit-column-rule: 2px dotted;
+	-moz-column-rule: 2px dotted; 
+	column-rule: 2px dotted;
+}
+.txt-dashed,
+.txt-gap-dashed{
+	-webkit-column-rule: 1px dashed #CCC;
+	-moz-column-rule: 1px dashed #CCC; 
+	column-rule: 1px dashed #CCC;
+}
+.txt-solid,
+.txt-gap-solid{
+	-webkit-column-rule: 1px solid #CCC;
+	-moz-column-rule: 1px solid #CCC; 
+	column-rule: 1px solid #CCC;
+}
+.column-count(@count){
+	-webkit-column-count:@count;
+	-moz-column-count:@count;
+	column-count:@count;
+}
+.txt-xs{
+	&-1{ .column-count(1); }
+	&-2{ .column-count(2); }
+	&-3{ .column-count(3); }
+	&-4{ .column-count(4); }
+	&-5{ .column-count(5); }
+	&-6{ .column-count(6); }
+}
+
+@media (min-width: 768px){
+	.txt-sm{
+		&-1{ .column-count(1); }
+		&-2{ .column-count(2); }
+		&-3{ .column-count(3); }
+		&-4{ .column-count(4); }
+		&-5{ .column-count(5); }
+		&-6{ .column-count(6); }
+	}
+}
+@media (min-width: 992px){
+	.txt-md{
+		&-1{ .column-count(1); }
+		&-2{ .column-count(2); }
+		&-3{ .column-count(3); }
+		&-4{ .column-count(4); }
+		&-5{ .column-count(5); }
+		&-6{ .column-count(6); }
+	}
+}
+@media (min-width: 1200px){
+	.txt-lg{
+		&-1{ .column-count(1); }
+		&-2{ .column-count(2); }
+		&-3{ .column-count(3); }
+		&-4{ .column-count(4); }
+		&-5{ .column-count(5); }
+		&-6{ .column-count(6); }
+	}
+}

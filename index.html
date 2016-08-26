@@ -1,0 +1,964 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Typojix 1.2 | Demonstration</title>
+		<link href="misc/grid-bootstrap.min.css" rel="stylesheet">
+
+		<link href="typojix.min.css" rel="stylesheet">
+		<link href="typojix.txt-columns.css" rel="stylesheet">
+
+		<!--<link href="less/typojix.css.less" rel="stylesheet/less">-->
+		<!--<link href="less/typojix.txt-columns.css.less" rel="stylesheet/less">-->
+		<style>
+			.block{margin-left:25%;width:50%}#btn_up{bottom:15px;cursor:pointer;display:none;position:fixed;right:25px}.exemple{border:1px solid #3F3F3F;-webkit-border-top-right-radius:4px;-webkit-border-top-left-radius:4px;-moz-border-top-right-radius:4px;-moz-border-top-lef-tradius:4px;border-top-right-radius:4px;border-top-left-radius:4px;padding:10px}pre{-webkit-border-top-right-radius:0;-webkit-border-top-left-radius:0;-moz-border-top-right-radius:0;-moz-border-top-lef-tradius:0;border-top-right-radius:0;border-top-left-radius:0}@media (min-width: 992px){.menu{position:fixed}}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="txt-center txt-up">Typojix 1.2</h1>
+				</div> <!-- /.col-md-12 -->
+
+				<div class="col-md-4">
+					<ul class="menu">
+						<li><a class="scrollTo" href="#install">Installation</a></li>
+						<li><a class="scrollTo" href="#title">Titres</a></li>
+						<li><a class="scrollTo" href="#paragraphe">Paragraphes</a></li>
+						<li><a class="scrollTo" href="#liste">Listes à puces</a></li>
+						<li><a class="scrollTo" href="#tabulation">Tabulations</a></li>
+						<li><a class="scrollTo" href="#espacement">Espacements</a></li>
+						<li><a class="scrollTo" href="#surligne">Surligniages</a></li>
+						<li><a class="scrollTo" href="#blockquote">Blockquotes</a></li>
+						<li><a class="scrollTo" href="#balise-dev">Balises de développements</a></li>
+						<li><a class="scrollTo" href="#balise-adrr">Balise adresse</a></li>
+						<li><a class="scrollTo" href="#balise-cite-q">Balises cite et q</a></li>
+						<li><a class="scrollTo" href="#txt-colonnes">Colonnes de texte</a></li>
+						<li><a class="scrollTo" href="#table">Tableaux</a></li>
+					</ul>
+				</div> <!-- /.col-md-4 -->
+
+				<div class="col-md-8">
+					<h2 id="install" class="txt-up major">Installation</h2>
+					<p>Typojix est un micro framework CSS permettant d’uniformiser et simplifié la 
+					gestion typographique de page web. Il offre également un STARTER-KIT vous 
+					permettant de personnaliser vos styles CSS rapidement.</p>
+
+					<h3>Installation des feuilles de styles CSS</h3>
+					<p>Feuille de style principal</p>
+<pre class="inverse">
+&lt;link href="css/typojix.css" rel="stylesheet">
+</pre>
+					<p>Feuille de style secondaire, permet d’utiliser vos paragraphes comme des colonnes de texte similaire aux journaux</p>
+<pre class="inverse">
+&lt;link href="css/typojix.txt-columns.css" rel="stylesheet">
+</pre>
+					<p>Recommande l’utilisation des feuilles minimisés pour le passage du site en production</p>
+<pre class="inverse">
+&lt;link href="css/typojix.min.css" rel="stylesheet">
+&lt;link href="css/typojix.txt-columns.min.css" rel="stylesheet">
+</pre>
+					<h3>Installation des feuilles de styles LESS</h3>
+<pre class="inverse">
+&lt;link href="less/typojix.min.css.less" rel="stylesheet/less">
+&lt;link href="less/typojix.txt-columns.min.css.less" rel="stylesheet/less">
+</pre>
+					<p>Nécessite l’utilisation du <a href=" http://lesscss.org/">script LESS</a> ou de <a href="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js">LESS CND</a></p>
+<pre class="inverse">
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js">&lt;/script>
+</pre>
+					<h2 id="title" class="txt-up major">Titres</h2>
+					<h3>Titres (défaut)</h3>
+					<div class="exemple">
+					<h1>Titre de niveau 1 <a href="#">avec lien</a> <small>et small</small></h1>
+					<h2>Titre de niveau 2 <a href="#">avec lien</a> <small>et small</small></h2>
+					<h3>Titre de niveau 3 <a href="#">avec lien</a> <small>et small</small></h3>
+					<h4>Titre de niveau 4 <a href="#">avec lien</a> <small>et small</small></h4>
+					<h5>Titre de niveau 5 <a href="#">avec lien</a> <small>et small</small></h5>
+					<h6>Titre de niveau 6 <a href="#">avec lien</a> <small>et small</small></h6>
+					</div>
+<pre class="inverse">
+&lt;h1&gt;Titre de niveau 1 &lt;a href="#">...&lt;/a> &lt;small&gt;...&lt;/small&gt;&lt;/h1&gt;
+&lt;h2&gt;Titre de niveau 2 &lt;a href="#">...&lt;/a> &lt;small&gt;...&lt;/small&gt;&lt;/h2&gt;
+&lt;h3&gt;Titre de niveau 3 &lt;a href="#">...&lt;/a> &lt;small&gt;...&lt;/small&gt;&lt;/h3&gt;
+&lt;h4&gt;Titre de niveau 4 &lt;a href="#">...&lt;/a> &lt;small&gt;...&lt;/small&gt;&lt;/h4&gt;
+&lt;h5&gt;Titre de niveau 5 &lt;a href="#">...&lt;/a> &lt;small&gt;...&lt;/small&gt;&lt;/h5&gt;
+&lt;h6&gt;Titre de niveau 6 &lt;a href="#">...&lt;/a> &lt;small&gt;...&lt;/small&gt;&lt;/h6&gt;
+</pre>
+					<h3 id="title-tab">Titres avec tabulation</h2>
+					<div class="exemple">
+					<h1>Titre de niveau 1</h1>
+					<h2 class="tab">Titre de niveau 2 avec tabulation</h2>
+					<h3 class="tab">Titre de niveau 3 avec tabulation</h3>
+					<h4 class="tab">Titre de niveau 4 avec tabulation</h4>
+					<h5 class="tab">Titre de niveau 5 avec tabulation</h5>
+					<h6 class="tab">Titre de niveau 6 avec tabulation</h6>
+					</div>
+<pre class="inverse">
+&lt;h1&gt;Titre de niveau 1&lt;/h1&gt;
+&lt;h2 class="tab"&gt;Titre de niveau 2 avec tabulation&lt;/h2&gt;
+&lt;h3 class="tab"&gt;Titre de niveau 3 avec tabulation&lt;/h3&gt;
+&lt;h4 class="tab"&gt;Titre de niveau 4 avec tabulation&lt;/h4&gt;
+&lt;h5 class="tab"&gt;Titre de niveau 5 avec tabulation&lt;/h5&gt;
+&lt;h6 class="tab"&gt;Titre de niveau 6 avec tabulation&lt;/h6&gt;
+</pre>
+					<h3 id="title-maj">Titre majuscule et majoré</h3>
+					<div class="exemple">
+					<h2 class="txt-up major">Lorem ipsum dolor sit amet</h2>
+					</div>
+<pre class="inverse">
+&lt;h2 class="txt-up major"&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+</pre>
+					<h2 id="paragraphe" class="txt-up major">Paragraphes</h2>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Texte (par défaut)</h3>
+							<div class="exemple">
+							<p class="txt-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+							sque et lorem leo. Suspendisse dignissim convallislibero, at vari
+							us urna hendrerit nec.</p>
+							</div>
+<pre class="inverse">
+&lt;p&gt;...&lt;/p&gt;
+</pre>
+						</div>
+						<div class="col-md-6">
+							<h3 class="txt-right">Texte alligné à droite</h3>
+							<div class="exemple">
+							<p class="txt-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+							sque et lorem leo. Suspendisse dignissim convallislibero, at vari
+							us urna hendrerit nec.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="txt-right"&gt;...&lt;/p&gt;
+</pre>
+						</div>
+					</div> <!-- /.row -->
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="txt-center">Texte centré</h3>
+							<div class="exemple">
+							<p class="txt-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Seddictum sapien nunc, 
+							ac cursus mauris consequat sit amet. Praesent semper pharetra euismod. Vestibulum 
+							efficitur arcu elit. Pellente sque et lorem leo. Suspendisse dignissim convallislibero, 
+							at vari us urna hendrerit nec.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="txt-center"&gt;...&lt;/p&gt;
+</pre>
+						</div>
+						<div class="col-md-6">
+							<h3 class="txt-justify">Texte justifié</h3>
+							<div class="exemple">
+							<p class="txt-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+							sque et lorem leo. Suspendisse dignissim convallislibero, at vari
+							us urna hendrerit nec.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="txt-justify"&gt;...&lt;/p&gt;
+</pre>
+						</div>
+					</div> <!-- /.row -->
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="txt-italic">Texte italic</h3>
+							<div class="exemple">
+							<p class="txt-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+							sque et lorem leo. Suspendisse dignissim convallislibero, at vari
+							us urna hendrerit nec.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="txt-italic"&gt;...&lt;/p&gt;
+</pre>
+						</div>
+						<div class="col-md-6">
+							<h3 class="txt-up">Texte majuscule</h3>
+							<div class="exemple">
+							<p class="txt-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="txt-up"&gt;...&lt;/p&gt;
+</pre>
+						</div>
+					</div> <!-- /.row -->
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Texte avec lettrine</h3>
+							<div class="exemple">
+							<p class="letter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien.</p>
+							<p class="letter">Seddictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+							sque et lorem leo.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="txt-letter"&gt;...&lt;/p&gt;
+</pre>
+						</div>
+						<div class="col-md-6">
+							<h3 class="tab">Texte avec tabulation</h3>
+							<div class="exemple">
+							<p class="tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus.</p>
+							<p class="tab">In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+							semper pharetra euismod.</p>
+							</div>
+<pre class="inverse">
+&lt;p class="tab"&gt;...&lt;/p&gt;
+</pre>
+<p>Pour gérrer plusieurs paragraphes :</p>
+<pre class="inverse">
+&lt;div class="tab-multi"&gt;
+	&lt;p&gt;...&lt;/p&gt;
+	&lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+						</div>
+					</div> <!-- /.row -->
+
+					<div class="row">
+						<h3 id="liste" class="txt-up major">Listes à puces</h3>
+						<div class="col-md-6">
+						<h3>Liste à puces</h3>
+						<div class="exemple">
+							<ul>
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li>eleifend laoreet massa</li>
+								<li>ac porta lacus
+									<ul>
+										<li><a class="download" href="#">Lorem ipsum dolor</a></li>
+										<li>eleifend laoreet massa</li>
+										<li>Suspendisse dignissim
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li>eleifend laoreet massa</li>
+												<li>Suspendisse dignissim</li>
+												<li>eleifend laoreet massa</li>
+												<li>ac porta lacus</li>
+											</ul>
+										</li>
+										<li>eleifend laoreet massa</li>
+										<li>ac porta lacus</li>
+									</ul>
+								</li>
+								<li>Suspendisse dignissim</li>
+								<li>eleifend laoreet massa</li>
+								<li>ac porta lacus</li>
+							</ul>
+							</div>
+<pre class="inverse">
+&lt;ul>
+	&lt;li>...&lt;/li>
+&lt;/ul>
+</pre>
+						</div>
+						<div class="col-md-6">
+							<h3>Liste numéroté</h3>
+							<div class="exemple">
+							<ol>
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li>eleifend laoreet massa</li>
+								<li>ac porta lacus
+									<ol>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li>eleifend laoreet massa</li>
+										<li>Suspendisse dignissim
+											<ol>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li>eleifend laoreet massa</li>
+												<li>Suspendisse dignissim</li>
+												<li>eleifend laoreet massa</li>
+												<li>ac porta lacus</li>
+											</ol>
+										</li>
+										<li>eleifend laoreet massa</li>
+										<li>ac porta lacus</li>
+									</ol>
+								</li>
+								<li>Suspendisse dignissim</li>
+								<li>eleifend laoreet massa</li>
+								<li>ac porta lacus</li>
+							</ol>
+							</div>
+<pre class="inverse">
+&lt;ol>
+	&lt;li>...&lt;/li>
+&lt;/ol>
+</pre>
+						</div>
+					</div>	
+					
+					<h3>Class des styles de listes à puces</h3>
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+						<h4>disc</h4>
+						<ul class="disc">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>armenian</h4>
+						<ul class="armenian">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>circle</h4>
+						<ul class="circle">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>cjk-ideographic</h4>
+						<ul class="cjk-ideographic">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+						<h4>decimal</h4>
+						<ul class="decimal">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>decimal-leading-zero</h4>
+						<ul class="decimal-leading-zero">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>georgian</h4>
+						<ul class="georgian">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>hebrew</h4>
+						<ul class="hebrew">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+						<h4>hiragana</h4>
+						<ul class="hiragana">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>hiragana-iroha</h4>
+						<ul class="hiragana-iroha">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>katakana</h4>
+						<ul class="katakana">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>lower-alpha</h4>
+						<ul class="lower-alpha">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+						<h4>lower-greek</h4>
+						<ul class="lower-greek">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>lower-latin</h4>
+						<ul class="lower-latin">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>lower-roman</h4>
+						<ul class="lower-roman">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>none</h4>
+						<ul class="none">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+						<h4>square</h4>
+						<ul class="square">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>upper-alpha</h4>
+						<ul class="upper-alpha">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>upper-latin </h4>
+						<ul class="upper-latin ">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>upper-roman</h4>
+						<ul class="upper-roman">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+						<h4>initial</h4>
+						<ul class="initial">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-6">
+						<h4>inherit</h4>
+						<ul class="inherit">
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li>eleifend laoreet massa</li>
+							<li>ac porta lacus</li>
+						</ul>
+						</div>
+					</div>
+
+					<h2 id="tabulation" class="txt-up major">Tabulations</h2>
+					<div class="exemple">
+						<p class="tab-1">Lorem ipsum dolor sit amet</p>
+						<p class="tab-2">Lorem ipsum dolor sit amet</p>
+						<p class="tab-3">Lorem ipsum dolor sit amet</p>
+						<p class="tab-4">Lorem ipsum dolor sit amet</p>
+						<p class="tab-5">Lorem ipsum dolor sit amet</p>
+					</div>
+<pre class="inverse">
+&lt;p class="tab-1">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="tab-2">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="tab-3">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="tab-4">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="tab-5">Lorem ipsum dolor sit amet&lt;/p&gt;
+</pre>
+					<h2 id="espacement" class="txt-up major">Espacements</h2>
+					<div class="exemple">
+						<p class="spc-1">Lorem ipsum dolor sit amet</p>
+						<p class="spc-2">Lorem ipsum dolor sit amet</p>
+						<p class="spc-3">Lorem ipsum dolor sit amet</p>
+						<p class="spc-4">Lorem ipsum dolor sit amet</p>
+						<p class="spc-5">Lorem ipsum dolor sit amet</p>
+					</div>
+<pre class="inverse">
+&lt;p class="spc-10">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="spc-20">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="spc-30">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="spc-40">Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class="spc-50">Lorem ipsum dolor sit amet&lt;/p&gt;
+</pre>
+					<h2 id="surligne" class="txt-up major">Surligniages</h2>
+					<div class="exemple">
+						<p>Lorem ipsum dolor <mark>sit amet, consectetur</mark> adipiscing elit.</p>
+						<p>Lorem ipsum dolor <mark class="blue">sit amet, consectetur</mark> adipiscing elit</p>
+						<p>Lorem ipsum dolor <mark class="fuchsia">sit amet, consectetur</mark> adipiscing elit.</p>
+						<p>Lorem ipsum dolor <mark class="green">sit amet, consectetur</mark> adipiscing elit.</p>
+						<p>Lorem ipsum dolor <mark class="orange">sit amet, consectetur</mark> adipiscing elit.</p>
+					</div>
+<pre class="inverse">
+&lt;p&gt;Lorem ipsum dolor &lt;mark>...&lt;/mark> adipiscing elit.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor &lt;mark class="blue">...&lt;/mark> adipiscing elit.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor &lt;mark class="fuchsia">...&lt;/mark> adipiscing elit.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor &lt;mark class="green">...&lt;/mark> adipiscing elit.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor &lt;mark class="orange">...&lt;/mark> adipiscing elit.&lt;/p&gt;
+</pre>
+					<h2 id="blockquote" class="txt-up major">Blockquotes</h2>
+					<h3>Blockquote (par défaut)</h3>
+					<div class="exemple">
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet.</p>
+							<p><small>- Lorem ipsum dolor</small></p>
+						</blockquote>
+					</div>
+<pre class="inverse">
+&lt;blockquote&gt;
+	&lt;p>...&lt;/p>
+	&lt;p>&lt;small>- Lorem ipsum dolor&lt;/small>&lt;/p>
+&lt;/blockquote>;
+</pre>
+					<h3>Blockquote aligné à droite</h3>
+					<div class="exemple">
+						<blockquote class="txt-right">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+							eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+							dictum sapien nunc, ac cursus mauris consequat sit amet.</p>
+							<p><small>- Lorem ipsum dolor</small></p>
+						</blockquote>
+					</div>
+<pre class="inverse">
+&lt;blockquote class="txt-right"&gt;...&lt;/blockquote>;
+</pre>
+					<h3>Blockquote avec icone double <small>(nécéssite le répértoire /icons)</small></h3>
+					<div class="exemple">
+						<blockquote class="two-quotes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+						eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+						dictum sapien nunc, ac cursus mauris consequat sit amet.</blockquote>
+					</div>
+<pre class="inverse">
+&lt;blockquote class="two-quotes"&gt;...&lt;/blockquote&gt;
+</pre>
+					<h3>Blockquote avec icone simple <small>(nécéssite le répértoire /icons)</small></h3>
+					<div class="exemple">
+						<blockquote class="quotes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi 
+						eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+						dictum sapien nunc, ac cursus mauris consequat sit amet.</blockquote>
+					</div>
+<pre class="inverse">
+&lt;blockquote class="quotes"&gt;...&lt;/blockquote&gt;
+</pre>
+					<h2 id="balise-dev" class="txt-up major">Balises de développements</h2>
+					<h3>Balise pre</h3>
+					<div class="exemple">
+<pre>&lt;p&gt;Code par defaut&lt;/p&gt;</pre>
+<pre class="inverse">&lt;p&gt;Code inverssé&lt;/p&gt;</pre>
+					</div>
+<pre class="inverse">
+&lt;pre&gt;&amp;lt;p&amp;gt;Code par defaut &amp;lt;/p&amp;gt;&lt;/pre&gt;
+&lt;pre class="inverse"&gt;&amp;lt;p&amp;gt;Code inverssé &amp;lt;/p&amp;gt;&lt;/pre&gt;
+</pre>
+
+			
+			<h3>Balise code</h3>
+			<div class="exemple">
+				<p>Une instruction du language C : <code type="c">printf("Hello world!\n");</code></p>
+			</div>
+<pre class="inverse">&lt;p>Une instruction du language C : &lt;code>printf("Hello world!\n");&lt;/code>&lt;/p></pre>
+
+			<h3>Balise kbd</h3>
+			<div class="exemple">
+			<p>Couper <kbd>Ctrl + X</kbd></p>
+			<p>Copier <kbd>Ctrl + C</kbd></p>
+			<p>Coller <kbd>Ctrl + V</kbd></p>
+			</div>
+<pre class="inverse">
+&lt;p>Couper &lt;kbd>Ctrl + X&lt;/kbd>&lt;/p>
+&lt;p>Copier &lt;kbd>Ctrl + C&lt;/kbd>&lt;/p>
+&lt;p>Coller &lt;kbd>Ctrl + V&lt;/kbd>&lt;/p>
+</pre>
+			<h3 id="balise-adrr" class="txt-up major">Balise adresse</h3>
+			<div class="exemple">
+				<address>
+				<strong>Personne morale</strong><br>
+				N°rue, adresse<br>
+				Nom de la ville<br>
+				<strong>Mail.</strong> <a href="mailto:adresse@emeple.fr">Contact</a><br>
+				<strong>Phone.</strong> <a href="#">+33 6 00 00 00 00</a>
+				</address>
+			</div>
+<pre class="inverse">
+&lt;address>...&lt;/address>
+</pre>
+
+			<h3 id="balise-cite-q" class="txt-up major">Balises cite et q</h3>
+			<div class="exemple">
+				<p>Lorem ipsum dolor sit amet, <cite>consectetur adipiscing elit.</cite></p>
+				<p>Morbi eleifend laoreet massa, <q>ac porta lacus. In sed rhoncus sapien.</q></p>
+			</div>
+<pre class="inverse">
+&lt;p>...&lt;cite>consectetur adipiscing elit.&lt;/cite>&lt;/p>
+&lt;p>...&lt;q>ac porta lacus. In sed rhoncus sapien.&lt;/q>&lt;/p>
+</pre>
+			<h2 id="txt-colonnes" class="txt-up major">Colonnes de texte</h2>
+			<p>Les colonnes de texte fonctionnent de la même façon que le framework « bootstrap ».
+			Pouvant aller jusqu’à 6 colonnes, le texte s’adapte en fonction la taille du navigateur.</p>
+			<ul>
+				<li>.txt-xs- (<768px) adapté aux téléphones mobiles,</li>
+				<li>.txt-sm- (≥ 768px) adapté aux tablettes,</li>
+				<li>.txt-md- (992 px) adapté aux ordinateurs,</li>
+				<li>.txt-lg- (≥ 1200px) adapté au grand écran.</li>
+			</ul>
+			<h3>Colonnes de texte (par défaut)</h3>
+			<div class="exemple">
+			<p class="txt-md-6">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-md-5">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-md-4">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-md-2">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-md-1">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			</div>
+<pre class="inverse">
+&lt;p class="txt-md-6">...&lt;/p>
+&lt;p class="txt-md-5">...&lt;/p>
+&lt;p class="txt-md-4">...&lt;/p>
+&lt;p class="txt-md-3">...&lt;/p>
+&lt;p class="txt-md-2">...&lt;/p>
+&lt;p class="txt-md-1">...&lt;/p>
+</pre>
+			<h3>Colonnes de texte avec bodure</h3>
+			<div class="exemple">
+			<p class="txt-dotted txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-solid txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-dashed txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			</div>
+<pre class="inverse">
+&lt;p class="txt-md-3 txt-dotted">...&lt;/p>
+&lt;p class="txt-md-3 txt-solid">...&lt;/p>
+&lt;p class="txt-md-3 txt-dashed">...&lt;/p>
+</pre>
+			<h3>Colonnes de texte avec espacement</h3>
+			<div class="exemple">
+			<p class="txt-gap txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			</div>
+<pre class="inverse">
+&lt;p class="txt-md-3 txt-gap">...&lt;/p>
+</pre>
+			<h3>Colonnes de texte avec espacement et bodure</h3>
+			<div class="exemple">
+			<p class="txt-gap-dotted txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-gap-solid txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			<p class="txt-gap-dashed txt-md-3">Lorem ipsum dolor <a href="#">sit amet, consectetur</a> adipiscing elit. Morbi 
+			eleifend laoreet massa, ac porta lacus. In sed rhoncus sapien. Sed
+			dictum sapien nunc, ac cursus mauris consequat sit amet. Praesent
+			semper pharetra euismod. Vestibulum efficitur arcu elit. Pellente
+			sque et lorem leo. <a href="#">Suspendisse dignissim convallis</a> libero, at vari
+			us urna hendrerit nec.</p>
+			</div>
+<pre class="inverse">
+&lt;p class="txt-md-3 txt-gap-dotted">...&lt;/p>
+&lt;p class="txt-md-3 txt-gap-solid">...&lt;/p>
+&lt;p class="txt-md-3 txt-gap-dashed">...&lt;/p>
+</pre>
+			<h2 id="table" class="txt-up major">Tableaux</h2>
+			<h3>Tableaux par defaut</h3>
+			<div class="exemple">
+				<table>
+				   <caption>Légende du tableau</caption>
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>John</td>
+							<td>23 ans</td>
+							<td>États-Unis</td>
+						</tr>
+						<tr>
+							<td>Jean</td>
+							<td>52 ans</td>
+							<td>France</td>
+						</tr>
+						<tr>
+							<td>Jiao</td>
+							<td>34 ans</td>
+							<td>Chine</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+<pre class="inverse">
+&lt;table>
+...
+&lt;/table>
+</pre>
+			<h3>Tableaux simple</h3>
+			<div class="exemple">
+				<table class="table">
+					<caption>Légende du tableau</caption>
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>John</td>
+							<td>23 ans</td>
+							<td>États-Unis</td>
+						</tr>
+						<tr>
+							<td>Jean</td>
+							<td>52 ans</td>
+							<td>France</td>
+						</tr>
+						<tr>
+							<td>Jiao</td>
+							<td>34 ans</td>
+							<td>Chine</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+<pre class="inverse">
+&lt;table class="table">
+...
+&lt;/table>
+</pre>	
+			<h3>Tableaux rayé</h3>
+			<div class="exemple">
+				<table class="table table-striped">
+					<caption>Légende du tableau</caption>
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>John</td>
+							<td>23 ans</td>
+							<td>États-Unis</td>
+						</tr>
+						<tr>
+							<td>Jean</td>
+							<td>52 ans</td>
+							<td>France</td>
+						</tr>
+						<tr>
+							<td>Jiao</td>
+							<td>34 ans</td>
+							<td>Chine</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+<pre class="inverse">
+&lt;table class="table table-striped">
+...
+&lt;/table>
+</pre>	
+
+			<h3>Tableaux hover</h3>
+			<div class="exemple">
+				<table class="table table-hover">
+					<caption>Légende du tableau</caption>
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>John</td>
+							<td>23 ans</td>
+							<td>États-Unis</td>
+						</tr>
+						<tr>
+							<td>Jean</td>
+							<td>52 ans</td>
+							<td>France</td>
+						</tr>
+						<tr>
+							<td>Jiao</td>
+							<td>34 ans</td>
+							<td>Chine</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Nom</th>
+							<th>Âge</th>
+							<th>Pays</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+<pre class="inverse">
+&lt;table class="table table-hover">
+...
+&lt;/table>
+</pre>	
+			</div>
+			</div>
+		</div>
+		<div id="btn_up">
+			<img style="opacity: 0.50;" src="misc/fleche.png" alt="" width="40" />
+		</div>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="misc/retour.js"></script>
+		<script src="misc/scroll.js"></script>
+	</body>
+</html>

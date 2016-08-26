@@ -1,0 +1,718 @@
+/*------------------------------------*\
+	name: Typojix v1.2
+
+	author: NOËL Mathieu
+	date: 2015 - 2016
+	brief: "Typojix" offre un "STARTER KIT" pour mettre en place, simplifier et uniformiser la typologie de vos pages web.
+	MIT License (https://github.com/noelma/Typojix/blob/master/LICENSE)
+\*------------------------------------*/
+/**
+ * FONTS.............................Surcharge les fonts
+	* FONT TITLE.....................
+	* FONT PARAGRAPHES...............
+ * MARGIN............................Les marges des balises de contenus
+ * MAIN..............................Valeur du body
+	* MAIN SELECTION.................Sélection du texte
+	* MAIN SELECTION LIEN............Sélection des liens du texte (désactivé)
+ * BALISES SEMENTIQUES (HTML5).......Balises sémantiques - HTML5
+	* $BALISES SEMENTIQUES AUTRES....Liste des balises sémantique non modifiés (désactivé)
+ * TITRES............................Gestion des titres
+ * LIEN HYPERTEXTE...................Gestion des liens
+	* LIEN HYPERTEXTE TITRE..........Les liens des titres (désactivé)
+ * PARAGRAPHES.......................Les paragraphes de texte
+ * LETTERINE.........................Les premières lettres de vos paragraphes
+ * LISTES............................Gestion des listes
+	* $LISTES CONTENT................Listes à puces personnalisés (désactivé)
+ * ESPACEMENT........................Classes pré-conçut pour les espacements de caractères
+ * TRAITEMENT TEXTE..................Classes pré-conçut pour le traitement de texte
+ */
+/* Les  couleurs*/
+@body: #666;
+@title: #333;
+@title_main: @title;
+@title_second: @title;
+@link: #07A575;
+@link_hover: #00815A;
+@selection: #AAA;
+/*------------------------------------*\
+	$FONTS
+
+	- Choisir une police à appliquer à votre style,
+	- Choisir de préférence une police supporter par un grand nombre de navigateurs,
+	- Choisir une ou plusieurs polices de substitution.
+	
+	Familles de polices
+		sans-serif
+		serif
+		monospace
+		cursive
+		fantasy
+	Police sans empattement (sans serif)
+		Calibri
+		Arial, Helvetica
+		Tahoma, Geneva
+		Helvetica, Helvetica
+		DejaVu Sans
+		Lucida Sans
+		Lucida Sans Unicode, Lucida Grande
+		Trebuchet MS, Geneva
+		Verdana, Geneva
+\*------------------------------------*/
+//	$FONT TITLE
+@font-face{
+	font-family:'font_main_title';
+	// src : url('myFont.eot');  Pour IE9 Compat mode
+	/* src : url('myFont.eot?') format('eot),/*
+			url('myFont.woff') format('woff'),
+			url('myFont.svg#abcd') format('svg'),
+			url('myFont.ttf') format('truetype'); */
+}
+@font-face{
+	font-family:'font_second_title';
+	// src: url('myFont.eot');
+}
+@font-face{
+	font-family:'font_title';
+	// src: url('myFont.eot');
+}
+//	$FONT PARAGRAPHES
+@font-face{
+	font-family:'font_main_text-regular';
+	// src: url('myFont.eot');
+}
+@font-face{
+	font-family: "font_main_text-bold";
+	// src: url('myFont.eot');
+}
+@font-face{
+	font-family: "font_main_text-italic";
+	// src: url('myFont.eot');
+}
+
+/*------------------------------------*\
+	$MARGIN
+\*------------------------------------*/
+address,
+blockquote,
+dl,
+hr,
+img,
+ul,
+ol,
+p,
+pre,
+table,
+.marge{
+	margin: 0 0 1.5em;
+}
+
+/*------------------------------------*\
+	$MAIN
+
+	- Il va définir les différentes propriétés dynamiques qui lui sont rattachés
+	- Le texte des navigateurs est généralement de 100% (16px),
+	le choix par défaut de typojix est de 112.5% (18px)
+	- Tout élément textuels sont par défaut justifiés
+\*------------------------------------*/
+body{
+	color: @body;
+	font-size: 18px;
+	font-family: font_main_text-regular, "Source Sans Pro", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	line-height: 1.75;
+}
+//	$MAIN SELECTION
+::-moz-selection{
+	background-color:@selection;
+	color: #FFF;
+}
+::selection{
+	background-color:@selection;
+	color: #FFF;
+}
+//	$MAIN SELECTION LIEN
+/*
+a::-moz-selection {background-color:#00B277;}
+a::selection{background-color:#00B277;}
+*/
+
+/*------------------------------------*\
+	$BALISES SEMENTIQUES (HTML5)
+\*------------------------------------*/
+abbr{
+	border-bottom: 1px dotted;
+	color: #333;
+	cursor: help;
+	letter-spacing:.1em;
+	text-transform:uppercase;
+}
+@media print{
+	abbr[title]{
+		border-bottom: 0;
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+		text-transform: none;
+	}
+}
+blockquote{
+	border-left: 5px solid #CCC;
+	padding: 10px 20px;
+	text-indent: 1em;
+	&.quotes{
+		background: url(../icons/simple-quote-open.png), url(../icons/simple-quote-close.png);
+		background-position: top left, bottom right;
+		background-repeat: no-repeat, no-repeat;
+		border-left:0;
+	}
+	&.two-quotes{
+		background: url(../icons/two-quotes-open.png), url(../icons/two-quotes-close.png);
+		background-position: top left, bottom right;
+		background-repeat: no-repeat, no-repeat;
+		border-left:0;
+		padding-right:40px;
+	}
+}
+cite,
+q{
+	color:#000;
+	padding-left:10px;
+	padding-right:10px;
+}
+kbd{
+	background: #F3F3F3;
+	border: 1px solid #333;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #333;
+	font-size: 90%;
+	padding: 4px;
+}
+mark{
+	background: #FF0;
+	&.blue{
+		background-color: #64DEFF;
+	}
+	&.fuchsia{
+		background-color: #FF64FF;
+	}
+	&.green{
+		background-color: #7BFF64;
+	}
+	&.orange{
+		background-color: #FCBF65;
+	}
+}
+pre{
+	background-color: #F3F3F3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	overflow: auto;
+	padding: 5px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+code{
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-family: monospace;
+	padding: 2px 4px;
+}
+code,
+pre.inverse{
+	background: #3F3F3F;
+	color: #DDD;
+}
+address,
+em,
+i{
+	font-style: italic;
+}
+//	$BALISES SEMENTIQUES AUTRES
+/*
+figure{}
+figcaption{}
+sup{}
+var{}
+samp{}
+sub{}
+strong{}
+*/
+
+/*------------------------------------*\
+	$TITRES
+
+	color:
+		h1
+			- Choisir une couleur unique pour définir le titre principal de vos pages
+		h2
+			- Choisir une couleur unique pour définir vos titres secondaires
+		h3, h4, h5, h6
+			- Par défaut gris sombre
+	font-size:
+		h1, h2, h3, h4, h5, h6
+			- Ne pas toucher, les facteurs multiplicateurs dépendent de la valeur initiale de votre body.
+\*------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6{
+	color: @title;
+	font-weight: 500;
+	font-family: font_title, Raleway, Helvetica, Arial, sans-serif;
+	margin: 0 0 1em;
+	text-align: left;
+	&.major{
+		border-bottom: 1px solid #CCC;
+		padding-bottom: 1em;
+	}
+}
+h1,
+.h1{
+	color: @title_main;
+	font-family: font_main_title, Raleway, Helvetica, Arial, sans-serif;
+	font-size: 2.25em;
+}
+h2,
+.h2{
+	font-family: font_second_title, Raleway, Helvetica, Arial, sans-serif;
+	font-size: 2em;
+}
+h3,
+.h3{
+	font-size: 1.75em;
+}
+h4,
+.h4{
+	font-size: 1.5em;
+}
+h5,
+.h5{
+	font-size: 1.25em;
+}
+h6,
+.h6{
+	font-size: 1em;
+}
+
+h2
+.h2.tab,
+.tab-1{
+	text-indent: 16px;
+}
+h3.tab,
+.h2.tab,
+.tab-2{
+	text-indent: 32px;
+}
+h4.tab,
+.h2.tab,
+.tab-3{
+	text-indent: 48px;
+}
+h5.tab,
+.h2.tab,
+.tab-4{
+	text-indent: 64px;
+}
+h6.tab,
+.h2.tab,
+.tab-5{
+	text-indent: 80px;
+}
+small,
+.small{
+	color: #999;
+}
+
+/*------------------------------------*\
+	$LIEN HYPERTEXTE
+
+	- Les liens des textes sont gérés de la même manière que les liens classiques.
+	vous pouvez néanmoins les surcharger.
+
+	color
+		a
+			- Couleur de votre charte graphique (de préférence)
+		a:hover
+			- Teinte juste en dessous ou au-dessus de la couleur de base
+		a:focus
+			- Peu être identique à "a:hover"
+	text-decoration
+		a
+			- Suppression du soulignement
+		a:hover
+			- Le surlignement peu rester un repère facile pour différencier les liens
+\*------------------------------------*/
+a{
+	color: @link;
+	text-decoration: none;
+	&:hover,
+	&:focus{
+		color: @link_hover;
+		text-decoration: underline;
+	}
+	// Prends la couleur et le font de l'élément parent
+	&.init{
+		color: inherit;
+		background-color: inherit;
+	}
+}
+// Affiche le lien à l'impression du contenu
+@media print{
+	a:after{
+		content: " (" attr(href) ")";
+	}
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after{
+		content: '';
+	}
+}
+
+//	$LIEN HYPERTEXTE TITRE
+/* Laisser le soulignement des liens dans les titres peut empêcher
+ * une confusion entre les liens classiques et les liens de titres 
+ *
+ * Certains sites choisissent de ne pas mettre de couleur ou de soulignement 
+ * des liens dans les titres et de faire apparaître la couleur du lien uniquement 
+ * au survole du titre.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+mark{
+	a{
+		// color: #333;
+		text-decoration: underline;
+	}
+}
+
+/*------------------------------------*\
+	$PARAGRAPHES
+\*------------------------------------*/
+p{
+	vertical-align: baseline;
+	strong,
+	b,
+	&.txt-bold,
+	.txt-bold{
+		font-family: font_main_text-bold, "Source Sans Pro", Helvetica, Arial, sans-serif;
+	}
+	em,
+	i,
+	&.txt-italic,
+	.txt-italic{
+		font-family: font_main_text-italic, "Source Sans Pro", Helvetica, Arial, sans-serif;
+	}
+}
+
+p.tab,
+p.tab-multi,
+p.tab-multi + p.tab-multi,
+.tab-multi p + p{
+	text-indent: 1.5em;
+}
+
+/*------------------------------------*\
+	$LETTRINE
+\*------------------------------------*/
+p.letter::first-letter{
+	color: #F00;
+	float: left;
+	font-size: 1.75em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+p.letter.tab-multi + p.letter.tab-multi::first-letter,
+.letter.tab-multi p + p::first-letter{
+	float: none;
+	font-size: initial;
+	font-weight: normal;
+}
+
+/*------------------------------------*\
+	$TRAITEMENT TEXTE
+\*------------------------------------*/
+.txt{
+	&-up{
+		letter-spacing:.1em;
+		text-transform: uppercase;
+	}
+	&-center{
+		text-align: center;
+	}
+	&-right{
+		text-align: right;
+	}
+	&-left{
+		text-align: left;
+	}
+	&-justify{
+		text-align: justify;
+	}
+	&-italic {
+		font-style: italic;
+	}
+	&-bold {
+		font-weight: bold;
+	}
+	// remplace la mauvais pratique du text-indent:-9999px;
+	&-hidden{
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+.warp{
+	-webkit-hyphens:auto;
+	-moz-hyphens:auto;
+	-ms-hyphens:auto;
+	-o-hyphens:auto;
+	hyphens:auto;
+}
+
+/*------------------------------------*\
+	$TABLE
+\*------------------------------------*/
+table,
+.table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	max-width: 100%;
+	width: 100%;
+	caption{
+		text-align: left;
+	}
+	th,td{
+		text-align: left;
+	}
+}
+.table{
+	caption{
+		padding: 4px 0;
+		border-bottom: 3px solid #DDD;
+		font-weight: bold;
+	}
+	th,td{
+		border-bottom: 1px solid #DDD;
+		padding: 4px;
+	}
+}
+.table-striped tbody tr:nth-of-type(2n+1){
+	background-color: #EEE;
+}
+.table-hover tbody tr:hover{
+	background-color: #EEE;
+}
+
+/*------------------------------------*\
+	$LISTE
+\*------------------------------------*/
+ul ul,
+ul ol,
+ol ul,
+ol ol{
+	margin: 0;
+}
+ol ol{
+	li{
+		list-style-type: upper-alpha;
+	}
+	ol li{
+		list-style-type: lower-alpha;
+	}
+}
+ol, 
+ul{
+	a{
+		display: block;
+		max-width: 100%;
+	}
+	&.disc{
+		list-style-type: disc;
+	}
+	&.armenian{
+		list-style-type: armenian;
+	}
+	&.circle{
+		list-style-type: circle;
+	}
+	&.cjk-ideographic{
+		list-style-type: cjk-ideographic;
+	}
+	&.decimal{
+		list-style-type: decimal;
+	}
+	&.decimal-leading-zero{
+		list-style-type: decimal-leading-zero;
+	}
+	&.georgian{
+		list-style-type: georgian;
+	}
+	&.hebrew{
+		list-style-type: hebrew;
+	}
+	&.hiragana{
+		list-style-type: hiragana;
+	}
+	&.hiragana-iroha{
+		list-style-type: hiragana-iroha;
+	}
+	&.katakana{
+		list-style-type: katakana;
+	}
+	&.katakana-iroha{
+		list-style-type: katakana-iroha;
+	}
+	&.lower-alpha{
+		list-style-type: lower-alpha;
+	}
+	&.lower-greek{
+		list-style-type: lower-greek;
+	}
+	&.lower-latin{
+		list-style-type: lower-latin;
+	}
+	&.lower-roman{
+		list-style-type: lower-roman;
+	}
+	&.none{
+		list-style-type: none;
+	}
+	&.square{
+		list-style-type: square;
+	}
+	&.upper-alpha{
+		list-style-type: upper-alpha;
+	}
+	&.upper-latin{
+		list-style-type: upper-latin;
+	}
+	&.upper-roman{
+		list-style-type: upper-roman;
+	}
+	&.initial{
+		list-style-type: initial;
+	}
+	&.inherit{
+		list-style-type: inherit;
+	}
+}
+
+//	$LISTES CONTENT
+// Les « listes content » sont des listes à puces qui utilisent des caractères UTF-8 pour personnaliser leurs puces.
+/*
+ol, ul{
+	&.rarr,
+	&.ndash,
+	&.oplus,
+	&.otimes,
+	&.curren,
+	&.raquo,
+	&.loz,
+	&.rarr,
+	&.ndash,
+	&.oplus,
+	&.otimes,
+	&.curren,
+	&.raquo,
+	&.loz{
+		list-style: none;
+		
+		ul li:before,
+		ul li:before,
+		ul li:before,
+		ul li:before,
+		ul li:before,
+		ul li:before,
+		ul li:before{
+			content: "";
+		}
+	}
+	
+	&.rarr li:before{
+		content: "→ ";
+	}
+	&.ndash li:before{
+		content: "- ";
+	}
+	&.oplus li:before{
+		content: "⊕ ";
+	}
+	&.otimes li:before{
+		content: "⊗ ";
+	}
+	&.curren li:before{
+		content: "¤ ";
+	}
+	&.raquo li:before{
+		content: "» ";
+	}
+	&.loz li:before{
+		content: "◊ ";
+	}
+}
+li{
+	&.rarr,
+	&.ndash,
+	&.oplus,
+	&.otimes,
+	&.curren,
+	&.raquo,
+	&.loz{
+		list-style: none;
+	}
+	&.rarr:before{
+	content: "→ ";
+	}
+	&.ndash:before{
+		content: "- ";
+	}
+	&.oplus:before{
+		content: "⊕ ";
+	}
+	&.otimes:before{
+		content: "⊗ ";
+	}
+	&.curren:before{
+		content: "¤ ";
+	}
+	&.raquo:before{
+		content: "» ";
+	}
+	&.loz:before{
+		content: "◊ ";
+	}
+}
+*/
+
+/*------------------------------------*\
+	$ESPACEMENT
+\*------------------------------------*/
+.spc{
+	&-5{ letter-spacing: .5em; }
+	&-4{ letter-spacing: .4em; }
+	&-3{ letter-spacing: .3em; }
+	&-2{ letter-spacing: .2em; }
+	&-1{ letter-spacing: .1em; }
+}
